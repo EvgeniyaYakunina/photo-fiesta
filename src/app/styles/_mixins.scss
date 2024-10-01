@@ -1,0 +1,88 @@
+/**
+ * Applies standard font styles with customization options.
+ *
+ * @param {string} $size - Font size (default: var(--font-size-m))
+ * @param {string} $line-height - Line height (default: var(--line-height-m))
+ * @param {string} $weight - Font weight (default: var(--font-weight-regular))
+ *
+ * @example
+ *  Usage in a settings.module.scss file:
+ *  First, at the beginning of your settings.module.scss file, add:
+ * @use '@/app/styles/mixins' as * ;
+ *
+ *  Then use the mixin:
+ * .yourClassName {
+ *   @include font(var(--font-size-l), var(--line-height-l), var(--font-weight-bold));
+ * }
+ */
+
+@mixin font(
+  $size: var(--font-size-m),
+  $line-height: var(--line-height-m),
+  $weight: var(--font-weight-regular)
+) {
+  margin: 0;
+  font-size: $size;
+  font-weight: $weight;
+  line-height: $line-height;
+}
+
+@mixin mobile($width: 360px) {
+  @media (max-width: $width) {
+    @content;
+  }
+}
+
+@mixin modal-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+@mixin modal-close {
+  cursor: pointer;
+  width: var(--svg-size);
+  height: var(--svg-size);
+
+  &:hover {
+    color: var(--light-900);
+  }
+
+  &:active {
+    color: var(--light-100);
+  }
+}
+
+@mixin image-preview($size) {
+  position: relative;
+
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: $size;
+  height: $size;
+  margin: 0;
+  padding: 0;
+
+  background-color: var(--dark-500);
+}
+
+@mixin image-wrapper {
+  position: absolute;
+
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 100%;
+
+  & > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+}

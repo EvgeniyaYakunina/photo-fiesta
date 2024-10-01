@@ -1,0 +1,39 @@
+@use '@/app/styles/mixins' as *;
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-bottom: 18px;
+
+  @include mobile {
+    gap: 5px;
+  }
+
+  & .container {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    width: 100%;
+
+    & .errorMessage {
+      color: var(--danger-500);
+    }
+  }
+
+  & .button {
+    display: flex;
+    flex-direction: column;
+    gap: var(--auth-form-gap);
+
+    @include mobile {
+      gap: 65px;
+    }
+
+    & .password {
+      cursor: pointer;
+      align-self: flex-end;
+      color: var(--light-900);
+    }
+  }
+}

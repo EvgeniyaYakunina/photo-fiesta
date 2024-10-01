@@ -1,0 +1,23 @@
+.settingsContainer {
+  display: flex;
+  align-self: flex-start;
+  width: 100%;
+  padding: 24px 0 0 24px;
+}
+
+.tabsList {
+  display: flex;
+  max-width: 972px;
+}
+
+.tabsTrigger {
+  display: flex;
+  width: 243px;
+  text-align: center;
+}
+
+.tabsContent {
+  display: flex;
+  justify-content: center;
+  max-width: 800px;
+}
